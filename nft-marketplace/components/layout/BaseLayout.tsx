@@ -1,5 +1,5 @@
 import {FunctionComponent, PropsWithChildren} from "react";
-import Navbar from "../navbar";
+import {Navbar} from "../index";
 
 const BaseLayout: FunctionComponent<PropsWithChildren> = ({children}) => {
 
