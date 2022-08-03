@@ -1,5 +1,5 @@
 import Link from "next/link"
-import React, {FunctionComponent, ReactElement} from "react"
+import React, {FC, ReactElement} from "react"
 import {useRouter} from "next/router"
 
 type LinkProps = {
@@ -8,7 +8,7 @@ type LinkProps = {
     activeClass: string
 }
 
-const ActiveLink: FunctionComponent<LinkProps> = ({children, ...props}) => {
+const ActiveLink: FC<LinkProps> = ({children, ...props}) => {
     const {pathname} = useRouter()
     let className = children!.props.className || ""
     let _defaultClass = `${className} text-gray-100`

@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
-import {FunctionComponent} from "react";
-import NftMeta from "../../../types/ntf";
+import {FC} from "react";
+import NftMeta from "@_types/ntf"
 
 type NftItemProps = {
-    item: NftMeta;
+    item: NftMeta
 }
 
-const NftItem: FunctionComponent<NftItemProps> = ({item}) => {
+const NftItem: FC<NftItemProps> = ({item}) => {
     return (
         <>
             <div className="flex-shrink-0">
