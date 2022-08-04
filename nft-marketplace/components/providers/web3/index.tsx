@@ -1,19 +1,12 @@
-import React, {
-    createContext,
-    FC,
-    ReactNode,
-    useContext,
-    useEffect,
-    useState
-} from "react"
+import {createContext, FC, ReactNode, useContext, useEffect, useState} from "react"
 import {ethers} from "ethers"
 import {createDefaultState, loadContract, Web3State} from "./utils"
-
-const Web3Context = createContext<Web3State>(createDefaultState())
 
 interface Props {
     children: ReactNode
 }
+
+const Web3Context = createContext<Web3State>(createDefaultState())
 
 const Web3Provider: FC<Props> = ({children}) => {
 
