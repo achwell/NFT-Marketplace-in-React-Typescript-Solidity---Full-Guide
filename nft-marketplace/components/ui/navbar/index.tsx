@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import {Disclosure, Menu} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
-import {ActiveLink} from "../index";
+import { useAccount } from '@hooks/web3'
+import {ActiveLink} from "../index"
 
 export default function Navbar() {
+    const { account } = useAccount()
+
+    console.log(account.data)
 
     const navigation = [
         {name: 'Marketplace', href: '/', current: true},
