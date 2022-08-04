@@ -4,18 +4,18 @@ import {useAccount, useNetwork} from '@hooks/web3'
 import {ActiveLink} from "../index"
 import Walletbar from './Walletbar'
 
+const navigation = [
+    {name: 'Marketplace', href: '/', current: true},
+    {name: 'Create', href: '/nft/create', current: false}
+]
+
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(' ')
+}
+
 export default function Navbar() {
     const {account} = useAccount()
     const {network} = useNetwork()
-
-    const navigation = [
-        {name: 'Marketplace', href: '/', current: true},
-        {name: 'Create', href: '/nft/create', current: false}
-    ]
-
-    function classNames(...classes: string[]) {
-        return classes.filter(Boolean).join(' ')
-    }
 
     return (
         <Disclosure as="nav" className="bg-gray-800">
@@ -69,7 +69,7 @@ export default function Navbar() {
                                     <svg className="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
                                       <circle cx={4} cy={4} r={3}/>
                                     </svg>
-                                      { network.isLoading ?
+                                      {network.isLoading ?
                                           "Loading..." :
                                           account.isInstalled ?
                                               network.data :
@@ -86,6 +86,7 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
+
                     <Disclosure.Panel className="sm:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             {navigation.map((item) => (

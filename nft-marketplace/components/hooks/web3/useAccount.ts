@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import {useEffect} from "react"
 import useSWR from "swr"
 import {CryptoHookFactory} from "@_types/hooks"
 
@@ -13,7 +13,7 @@ type AccountHookFactory = CryptoHookFactory<string, UseAccountResponse>
 export type UseAccountHook = ReturnType<AccountHookFactory>
 
 export const hookFactory: AccountHookFactory = ({provider, ethereum, isLoading}) => () => {
-    const {data, mutate, isValidating,...swr} = useSWR(        provider ? "web3/useAccount" : null,
+    const {data, mutate, isValidating, ...swr} = useSWR(provider ? "web3/useAccount" : null,
         async () => {
             const accounts = await provider!.listAccounts();
             const account = accounts[0];

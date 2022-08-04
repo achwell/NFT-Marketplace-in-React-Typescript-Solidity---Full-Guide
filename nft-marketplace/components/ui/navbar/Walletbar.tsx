@@ -15,9 +15,6 @@ function classNames(...classes: string[]) {
 
 const Walletbar: FC<WalletbarProps> = ({isInstalled, isLoading, connect, account}) => {
 
-    console.log("Is Loading: ", isLoading)
-    console.log("Is Installed: ", isInstalled)
-
     if (isLoading) {
         return (
             <div>

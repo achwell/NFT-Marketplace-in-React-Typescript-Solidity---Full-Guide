@@ -1,7 +1,7 @@
-import { MetaMaskInpageProvider } from "@metamask/providers"
-import { providers } from "ethers"
-import { SWRResponse } from "swr";
-import { NftMarketContract } from "./nftMarketContract"
+import {MetaMaskInpageProvider} from "@metamask/providers"
+import {providers} from "ethers"
+import {SWRResponse} from "swr";
+import {NftMarketContract} from "./nftMarketContract"
 
 export type Web3Dependencies = {
     provider: providers.Web3Provider
